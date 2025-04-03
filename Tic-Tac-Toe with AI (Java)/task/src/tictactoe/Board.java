@@ -1,16 +1,28 @@
 package tictactoe;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Board {
 
     private String currentBoard;
+    private final Scanner scanner;
+    private final Manager manager;
 
-    public void setInitialBoard(String initialBoard) {
+    public Board(Scanner scanner, Manager manager) {
+        this.scanner = scanner;
+        this.manager = manager;
+    }
+
+    public void setInitialBoard() {
         System.out.println("Welcome to Tic-Tac-Toe!");
 
+        String initialBoard = "";
         boolean validBoard = false; // Loops until user enter a valid board
 
         while (!validBoard) {
             System.out.print("Enter the cells: > ");
+            initialBoard = scanner.nextLine();
             /*
               Matches("[XO_]*"): This regex pattern checks if the string contains only the characters X, O, or _.
               The '*' allows for zero or more occurrences of those characters.
@@ -28,7 +40,7 @@ public class Board {
         updateBoard();
     }
 
-    public static void printBoard(String newBoard) {
+    public void printBoard(String newBoard) {
 
         int counterX = 0;
         int counterO = 0;
@@ -38,7 +50,7 @@ public class Board {
          */
         String board = "---------\n| ";
         for (int i = 0; i < newBoard.length(); i++) {
-            if (firstTurn) {            // Counts each char to set the first turn
+            if (manager.firstTurn) {            // Counts each char to set the first turn
                 if (newBoard.charAt(i) == 'X') {
                     counterX++;
                 } else if (newBoard.charAt(i) == 'O') {
@@ -54,17 +66,17 @@ public class Board {
             }
         }
         board += "---------"; // Board closed
-        if (firstTurn) {
+        if (this.manager.firstTurn) {
             if (counterX > counterO) { // Just if there's more X, O starts. Any other case, X starts
-                turnX = true;
+                manager.printCharTurn();
             }
-            firstTurn = false;
+            manager.firstTurn = false;
         }
         board = board.replace("_", " ");
 
         System.out.println(board);
-        if (endGame) {
-            System.out.println(printCharTurn() + " wins");
+        if (manager.endGame) {
+            System.out.println(manager.printCharTurn() + " wins");
         }
     }
 
@@ -106,7 +118,7 @@ public class Board {
             /* Creates a new string with the updated cells */
             for (int i = 0; i < currentBoard.length(); i++) {
                 if (i == cell){
-                    newBoard += printCharTurn();
+                    newBoard += manager.printCharTurn();
                 } else{
                     newBoard += currentBoard.charAt(i);
                 }
@@ -114,20 +126,73 @@ public class Board {
                     /* If there's a winner, the loop breaks, so the string of the new board will not be complete,
                      * so it is completed with the remained string that wasn't checked at that point
                      * */
-                    endGame = true;
-                    printCharTurn();
+                    manager.endGame = true;
+                    manager.printCharTurn();
                     newBoard += currentBoard.substring(i + 1);
                     break;
                 }
             }
             printBoard(newBoard);
+            currentBoard = newBoard;
 
-            while (!endGame) { // Loops the update until the game is finished
-                updateBoard(newBoard);
+            while (!manager.endGame) { // Loops the update until the game is finished
+                updateBoard();
             }
         } else {
-            endGame = true;
             System.out.println("Draw");
+            manager.endGame = true;
         }
+    }
+
+    /**
+     The logic should check from end to start, in order to use just one iteration when the board is updating
+     instead of update and loop again through the string array
+     0 1 2   1- must check 2 backwards (horizontal)
+     3 4 5   2- must check 5 backwards (horizontal)
+     6 7 8   3- must check 6 (diagonal from 6 to 2) it shouldn't check 2 to 6 because 6 might change after the check
+     4- also check 6 vertical (6-0) same logic as diagonal
+     5- must check 7 vertical (7 to 1)
+     6- last check 8 backwards (horizontal),
+     7- also check 8 vertical (8 to 2, same case at the diagonal 2-6)
+     8- and diagonal 8 to 0
+     */
+    public static boolean checkWinner(String currentBoard, int cell) {
+        /**
+         * There are 3 different checks (horizontal, vertical, diagonal)
+         * Horizontal: check i-1 and i-2
+         * Vertical: check i-3 and i-6
+         * Diagonal (6-2): check i-2 and i-4
+         * Diagonal (8-0): check i-4 and i-8
+         */
+        int[] hCells = new int[]{2, 5, 8}; // The cells that need to be checked horizontally
+        int[] vCells = new int[]{6, 7, 8}; // The cells that need to be checked vertically
+        int dLRCells = 6; // The cells that need to be checked diagonal left to right (6-2)
+        int dRLCells = 8; // The cells that need to be checked diagonal right to left (8-0)
+
+        if (Arrays.stream(hCells).anyMatch(num -> num == cell)) {
+            if (currentBoard.charAt(cell) == currentBoard.charAt(cell - 1) &&
+                    currentBoard.charAt(cell) == currentBoard.charAt(cell - 2)){
+                return true;
+            }
+        }
+        if (Arrays.stream(vCells).anyMatch(num -> num == cell)) {
+            if (currentBoard.charAt(cell) == currentBoard.charAt(cell - 3) &&
+                    currentBoard.charAt(cell) == currentBoard.charAt(cell - 6)){
+                return true;
+            }
+        }
+        if (cell == dLRCells) {
+            if (currentBoard.charAt(cell) == currentBoard.charAt(4) &&
+                    currentBoard.charAt(cell) == currentBoard.charAt(2)){
+                return true;
+            }
+        }
+        if (cell == dRLCells) {
+            if (currentBoard.charAt(cell) == currentBoard.charAt(4) &&
+                    currentBoard.charAt(cell) == currentBoard.charAt(0)){
+                return true;
+            }
+        }
+        return false;
     }
 }
