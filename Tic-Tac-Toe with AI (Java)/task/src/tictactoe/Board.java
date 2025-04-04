@@ -1,10 +1,12 @@
 package tictactoe;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Board {
-
+    // TODO: Just put a random number on the empty cells when its computer's turn
     private String currentBoard;
     private final Scanner scanner;
     private final Manager manager;
@@ -15,48 +17,21 @@ public class Board {
     }
 
     public void setInitialBoard() {
-        System.out.println("Welcome to Tic-Tac-Toe!");
 
-        String initialBoard = "";
-        boolean validBoard = false; // Loops until user enter a valid board
+        String initialBoard = "_________";
 
-        while (!validBoard) {
-            System.out.print("Enter the cells: ");
-            initialBoard = scanner.nextLine();
-            /*
-              Matches("[XO_]*"): This regex pattern checks if the string contains only the characters X, O, or _.
-              The '*' allows for zero or more occurrences of those characters.
-              It will loop until there is a valid string and have the specified characters
-             */
-            if (initialBoard.matches("[XO_]+") && initialBoard.length() == 9) {
-                validBoard = true;
-            } else {
-                System.out.println("'" + initialBoard + "' is an invalid input! " +
-                        "The string must only contain X, O, or _. Also must be 9 characters length. Try again.");
-            }
-        }
         printBoard(initialBoard);
         this.currentBoard = initialBoard;
         updateBoard();
     }
 
     public void printBoard(String newBoard) {
-
-        int counterX = 0;
-        int counterO = 0;
         /*
          * Format the board to print it visually
          * Use the loop to set the first turn, according to the number of each chars at the initial state
          */
         String board = "---------\n| ";
         for (int i = 0; i < newBoard.length(); i++) {
-            if (manager.firstTurn) {            // Counts each char to set the first turn
-                if (newBoard.charAt(i) == 'X') {
-                    counterX++;
-                } else if (newBoard.charAt(i) == 'O') {
-                    counterO++;
-                }
-            }
             board += newBoard.charAt(i) + " ";
             if ((i+1) % 3 == 0) { // Once the line ends (3 columns each) add a break line
                 board += "|\n";
@@ -66,12 +41,7 @@ public class Board {
             }
         }
         board += "---------"; // Board closed
-        if (this.manager.firstTurn) {
-            if (counterX > counterO) { // Just if there's more X, O starts. Any other case, X starts
-                manager.printCharTurn();
-            }
-            manager.firstTurn = false;
-        }
+
         board = board.replace("_", " ");
 
         System.out.println(board);
@@ -87,40 +57,44 @@ public class Board {
         String newBoard = "";
         if (currentBoard.contains("_")){ // Verify that the board contains at least one empty cell
             int cell = 0;
-            while (!isEmptyCell) {
-                System.out.print("Enter the coordinates ");
-                // TODO (optional) read the 'X Y' coords format to just 2 chars
-                String inputX = ""; // Read next string and tries to parse to int
-                String inputY = "";
-                try{
-                    inputX = scanner.next();
-                    x = Integer.parseInt(inputX);
-                } catch (NumberFormatException e) {
-                    System.out.println("You should enter numbers!"); // Catches anything that is not a number
-                    continue;
-                }
-                try{
-                    inputY = scanner.next();
-                    y = Integer.parseInt(inputY);
-                } catch (NumberFormatException e) {
-                    System.out.println("You should enter numbers!"); // Catches anything that is not a number
-                    continue;
-                }
-                if (x >= 1 && x <= 3 && y >= 1 && y <= 3) { // Board boundaries
-                    /**
-                     * Coords 1,1 means 1*1 =1. 1-1=0, so it's index 0 at the array
-                     * Coords 3,3 means 3*3=9, 9-1=8, so it's index 8
-                     * Then verifies if the selected coords contains an empty cell
-                     */
-                    cell = ((x -1) * 3) + (y - 1);
-                    if (currentBoard.charAt(cell) == '_') {
-                        isEmptyCell = true;
-                    } else {
-                        System.out.println("This cell is occupied! Choose another one!");
+            if (!manager.turnO){
+                while (!isEmptyCell) {
+                    System.out.print("Enter the coordinates: ");
+                    String inputX = ""; // Read next string and tries to parse to int
+                    String inputY = "";
+                    try {
+                        inputX = scanner.next();
+                        x = Integer.parseInt(inputX);
+                    } catch (NumberFormatException e) {
+                        System.out.println("You should enter numbers!"); // Catches anything that is not a number
+                        continue;
                     }
-                } else {
-                    System.out.println("Coordinates should be from 1 to 3!");
+                    try {
+                        inputY = scanner.next();
+                        y = Integer.parseInt(inputY);
+                    } catch (NumberFormatException e) {
+                        System.out.println("You should enter numbers!"); // Catches anything that is not a number
+                        continue;
+                    }
+                    if (x >= 1 && x <= 3 && y >= 1 && y <= 3) { // Board boundaries
+                        /**
+                         * Coords 1,1 means 1*1 =1. 1-1=0, so it's index 0 at the array
+                         * Coords 3,3 means 3*3=9, 9-1=8, so it's index 8
+                         * Then verifies if the selected coords contains an empty cell
+                         */
+                        cell = ((x - 1) * 3) + (y - 1);
+                        if (currentBoard.charAt(cell) == '_') {
+                            isEmptyCell = true;
+                        } else {
+                            System.out.println("This cell is occupied! Choose another one!");
+                        }
+                    } else {
+                        System.out.println("Coordinates should be from 1 to 3!");
+                    }
                 }
+            } else {
+                System.out.println("Making move level \"easy\"");
+                cell = compTurn();
             }
             /* Creates a new string with the updated cells */
             for (int i = 0; i < currentBoard.length(); i++) {
@@ -140,9 +114,6 @@ public class Board {
                 }
             }
             printBoard(newBoard);
-            if (newBoard.contains("_")){
-                System.out.println("Game not finished");
-            }
             currentBoard = newBoard;
 
             while (!manager.endGame) { // Loops the update until the game is finished
@@ -206,5 +177,18 @@ public class Board {
             }
         }
         return false;
+    }
+
+    /* Returns a random index from the available cells of the board string */
+    private int compTurn(){
+        Random random = new Random();
+        ArrayList <Integer> emptyCells = new ArrayList<>();
+        for (int i = 0; i < currentBoard.length(); i++) {
+            if (currentBoard.charAt(i) == '_') {
+                emptyCells.add(i);
+            }
+        }
+        int randomIndex = random.nextInt(emptyCells.size());
+        return emptyCells.get(randomIndex);
     }
 }

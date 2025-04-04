@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class Manager {
     Scanner scanner = new Scanner(System.in);
-    protected boolean firstTurn = true; // First turn starts as true, active only for the first move
     protected boolean endGame = false; // Flag to check if the game ends at the current turn
-    private boolean turnX = false; // Determines whose turn it is
+    protected boolean turnO = false; // Determines whose turn it is
     private final Board board; // Board instance
-    private final Player playerX = new Player("X");
-    private final Player playerO = new Player("O");
+    private final Player player = new Player("X"); // User plays as X
+    private final Player comp = new Player("O"); // Computer plays as O
 
     public Manager() {
         this.board = new Board(scanner, this);
@@ -20,11 +19,11 @@ public class Manager {
     }
 
     public String printCharTurn() {
-        turnX = !turnX;
-        if (turnX) {
-            return this.playerX.useTurn();
+        turnO = !turnO; // Changes the turn when it's called
+        if (turnO) {
+            return this.player.useTurn();
         }
-        return this.playerO.useTurn();
+        return this.comp.useTurn();
     }
 
 }
