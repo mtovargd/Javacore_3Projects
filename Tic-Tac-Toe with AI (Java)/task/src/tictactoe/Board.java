@@ -21,7 +21,7 @@ public class Board {
         boolean validBoard = false; // Loops until user enter a valid board
 
         while (!validBoard) {
-            System.out.print("Enter the cells: > ");
+            System.out.print("Enter the cells: ");
             initialBoard = scanner.nextLine();
             /*
               Matches("[XO_]*"): This regex pattern checks if the string contains only the characters X, O, or _.
@@ -83,17 +83,24 @@ public class Board {
     private void updateBoard() {
         int x = 0;
         int y = 0;
-        boolean emptyCell = false;
+        boolean isEmptyCell = false;
         String newBoard = "";
         if (currentBoard.contains("_")){ // Verify that the board contains at least one empty cell
             int cell = 0;
-            while (!emptyCell) {
-                System.out.print("Enter the coordinates > ");
+            while (!isEmptyCell) {
+                System.out.print("Enter the coordinates ");
                 // TODO (optional) read the 'X Y' coords format to just 2 chars
-                String inputX = scanner.next(); // Read next string and tries to parse to int
-                String inputY = scanner.next();
+                String inputX = ""; // Read next string and tries to parse to int
+                String inputY = "";
                 try{
+                    inputX = scanner.next();
                     x = Integer.parseInt(inputX);
+                } catch (NumberFormatException e) {
+                    System.out.println("You should enter numbers!"); // Catches anything that is not a number
+                    continue;
+                }
+                try{
+                    inputY = scanner.next();
                     y = Integer.parseInt(inputY);
                 } catch (NumberFormatException e) {
                     System.out.println("You should enter numbers!"); // Catches anything that is not a number
@@ -105,9 +112,9 @@ public class Board {
                      * Coords 3,3 means 3*3=9, 9-1=8, so it's index 8
                      * Then verifies if the selected coords contains an empty cell
                      */
-                    cell = (x * y) - 1;
+                    cell = ((x -1) * 3) + (y - 1);
                     if (currentBoard.charAt(cell) == '_') {
-                        emptyCell = true;
+                        isEmptyCell = true;
                     } else {
                         System.out.println("This cell is occupied! Choose another one!");
                     }
@@ -133,6 +140,9 @@ public class Board {
                 }
             }
             printBoard(newBoard);
+            if (newBoard.contains("_")){
+                System.out.println("Game not finished");
+            }
             currentBoard = newBoard;
 
             while (!manager.endGame) { // Loops the update until the game is finished
@@ -156,7 +166,7 @@ public class Board {
      7- also check 8 vertical (8 to 2, same case at the diagonal 2-6)
      8- and diagonal 8 to 0
      */
-    public static boolean checkWinner(String currentBoard, int cell) {
+    public static boolean checkWinner(String board, int cell) {
         /**
          * There are 3 different checks (horizontal, vertical, diagonal)
          * Horizontal: check i-1 and i-2
@@ -169,28 +179,30 @@ public class Board {
         int dLRCells = 6; // The cells that need to be checked diagonal left to right (6-2)
         int dRLCells = 8; // The cells that need to be checked diagonal right to left (8-0)
 
-        if (Arrays.stream(hCells).anyMatch(num -> num == cell)) {
-            if (currentBoard.charAt(cell) == currentBoard.charAt(cell - 1) &&
-                    currentBoard.charAt(cell) == currentBoard.charAt(cell - 2)){
-                return true;
+        if (board.charAt(cell) != '_'){
+            if (Arrays.stream(hCells).anyMatch(num -> num == cell)) {
+                if (board.charAt(cell) == board.charAt(cell - 1) &&
+                        board.charAt(cell) == board.charAt(cell - 2)) {
+                    return true;
+                }
             }
-        }
-        if (Arrays.stream(vCells).anyMatch(num -> num == cell)) {
-            if (currentBoard.charAt(cell) == currentBoard.charAt(cell - 3) &&
-                    currentBoard.charAt(cell) == currentBoard.charAt(cell - 6)){
-                return true;
+            if (Arrays.stream(vCells).anyMatch(num -> num == cell)) {
+                if (board.charAt(cell) == board.charAt(cell - 3) &&
+                        board.charAt(cell) == board.charAt(cell - 6)) {
+                    return true;
+                }
             }
-        }
-        if (cell == dLRCells) {
-            if (currentBoard.charAt(cell) == currentBoard.charAt(4) &&
-                    currentBoard.charAt(cell) == currentBoard.charAt(2)){
-                return true;
+            if (cell == dLRCells) {
+                if (board.charAt(cell) == board.charAt(4) &&
+                        board.charAt(cell) == board.charAt(2)) {
+                    return true;
+                }
             }
-        }
-        if (cell == dRLCells) {
-            if (currentBoard.charAt(cell) == currentBoard.charAt(4) &&
-                    currentBoard.charAt(cell) == currentBoard.charAt(0)){
-                return true;
+            if (cell == dRLCells) {
+                if (board.charAt(cell) == board.charAt(4) &&
+                        board.charAt(cell) == board.charAt(0)) {
+                    return true;
+                }
             }
         }
         return false;

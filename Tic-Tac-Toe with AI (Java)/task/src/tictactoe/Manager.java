@@ -27,13 +27,4 @@ public class Manager {
         return this.playerO.useTurn();
     }
 
-    public void declareWinner(String winner) {
-        endGame = true;
-        System.out.println(winner + " wins");
-    }
-
-    public void declareDraw() {
-        endGame = true;
-        System.out.println("Draw");
-    }
 }
