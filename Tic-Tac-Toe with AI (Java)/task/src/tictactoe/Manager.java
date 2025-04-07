@@ -13,8 +13,16 @@ public class Manager {
     private final Player player2; // Player 2 plays as O
 
     public Manager(String player1, String player2) {
-        this.player1 = new Player("X", player1);
-        this.player2 = new Player("O", player2);
+        if (player1.equals("user")) {
+            this.player1 = new Player("X", player1);
+        } else{
+            this.player1 = new Computer("X", player1);
+        }
+        if (player2.equals("user")) {
+            this.player2 = new Player("O", player2);
+        } else{
+            this.player2 = new Computer("O", player2);
+        }
         this.board = new Board(scanner, this);
     }
 
@@ -37,6 +45,14 @@ public class Manager {
             return Objects.equals(this.player1.getPlayerType(), "user");
         } else {
             return Objects.equals(this.player2.getPlayerType(), "user");
+        }
+    }
+
+    protected int getCompTurn(){
+        if (turnX){
+            return this.player1.getCoord();
+        } else {
+            return this.player2.getCoord();
         }
     }
 

@@ -19,4 +19,8 @@ public class Player {
         return this.name;
     }
     protected String getPlayerType() { return this.playerType; }
+
+    public int getCoord() {
+        return -1;
+    }
 }

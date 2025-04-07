@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Menu {
     // TODO: Add menu to select who will play and the char they will use
-    private final List<String> validPlayers = Arrays.asList("user", "easy");
+    private final List<String> validPlayers = Arrays.asList("user", "easy", "medium");
 
     public void displayMenu() {
         Scanner scanner = new Scanner(System.in);

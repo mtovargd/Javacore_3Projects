@@ -1,7 +1,6 @@
 package tictactoe;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -93,7 +92,7 @@ public class Board {
                 }
             } else {
                 System.out.println("Making move level \"easy\"");
-                cell = compTurn();
+                cell = manager.getCompTurn();
             }
             /* Creates a new string with the updated cells */
             for (int i = 0; i < currentBoard.length(); i++) {
@@ -124,16 +123,5 @@ public class Board {
         }
     }
 
-    /* Returns a random index from the available cells of the board string */
-    private int compTurn(){
-        Random random = new Random();
-        ArrayList <Integer> emptyCells = new ArrayList<>();
-        for (int i = 0; i < currentBoard.length(); i++) {
-            if (currentBoard.charAt(i) == '_') {
-                emptyCells.add(i);
-            }
-        }
-        int randomIndex = random.nextInt(emptyCells.size());
-        return emptyCells.get(randomIndex);
-    }
+
 }
