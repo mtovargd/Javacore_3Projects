@@ -21,6 +21,18 @@ files:
   - name: test/TicTacToeTest.java
     visible: false
     learner_created: false
+  - name: src/tictactoe/Board.java
+    visible: true
+    learner_created: true
+  - name: src/tictactoe/Manager.java
+    visible: true
+    learner_created: true
+  - name: src/tictactoe/Player.java
+    visible: true
+    learner_created: true
+  - name: src/tictactoe/Menu.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7437#comment
 status: Unchecked
 record: -1

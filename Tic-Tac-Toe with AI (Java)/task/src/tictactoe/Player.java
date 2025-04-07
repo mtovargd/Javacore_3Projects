@@ -1,17 +1,22 @@
 package tictactoe;
 
 public class Player {
-    private String name;
+    private String name = "";
+    private String playerType = "";
 
-    public Player(String symbol) {
-        this.name = symbol;
+    public Player(String symbol, String type) {
+        setName(symbol);
+        setPlayerType(type);
     }
-
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
+    private void setPlayerType(String type) {
+        this.playerType = type;
+    }
 
-    public String useTurn() {
+    protected String getTurn() {
         return this.name;
     }
+    protected String getPlayerType() { return this.playerType; }
 }
