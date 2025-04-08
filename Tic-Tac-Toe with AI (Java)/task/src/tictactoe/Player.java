@@ -20,7 +20,7 @@ public class Player {
     }
     protected String getPlayerType() { return this.playerType; }
 
-    public int getCoord() {
+    public int getCoord(String s) {
         return -1;
     }
 }

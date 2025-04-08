@@ -91,24 +91,26 @@ public class Board {
                     }
                 }
             } else {
-                System.out.println("Making move level \"easy\"");
-                cell = manager.getCompTurn();
+                System.out.println("Making move level \"" + manager.getCurrentPlayer().getPlayerType() +"\"");
+                cell = manager.getCompTurn(currentBoard);
             }
             /* Creates a new string with the updated cells */
             for (int i = 0; i < currentBoard.length(); i++) {
                 if (i == cell){
-                    newBoard += manager.printCharTurn();
-                } else{
-                    newBoard += currentBoard.charAt(i);
-                }
-                if (manager.checkWinner(newBoard, i)){
-                    /* If there's a winner, the loop breaks, so the string of the new board will not be complete,
+                    /* Once the loop match with the new updated cell,
+                     * the loop breaks, so the string of the new board will not be complete,
                      * so it is completed with the remained string that wasn't checked at that point
                      * */
-                    manager.endGame = true;
-                    manager.printCharTurn();
+                    newBoard += manager.printCharTurn();
                     newBoard += currentBoard.substring(i + 1);
+                    if (manager.checkWinner(newBoard, i) == 3){
+                        manager.endGame = true;
+                        manager.printCharTurn();
+                    }
                     break;
+                } else{
+                    /* If the cell is not the new updated, just add the current board cell to the new board */
+                    newBoard += currentBoard.charAt(i);
                 }
             }
             printBoard(newBoard);

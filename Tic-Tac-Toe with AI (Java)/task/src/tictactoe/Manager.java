@@ -1,8 +1,6 @@
 package tictactoe;
 
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class Manager {
     Scanner scanner = new Scanner(System.in);
@@ -12,22 +10,37 @@ public class Manager {
     private final Player player1; // Player 1 plays as X
     private final Player player2; // Player 2 plays as O
 
+    /* Default possible wins */
+    private static final int[][] WIN_COMBINATIONS = {
+            {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // Horizontal
+            {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // Vertical
+            {0, 4, 8}, {2, 4, 6}             // Diagonal
+    };
+
     public Manager(String player1, String player2) {
         if (player1.equals("user")) {
             this.player1 = new Player("X", player1);
         } else{
-            this.player1 = new Computer("X", player1);
+            this.player1 = new Computer(this, "X", player1);
         }
         if (player2.equals("user")) {
             this.player2 = new Player("O", player2);
         } else{
-            this.player2 = new Computer("O", player2);
+            this.player2 = new Computer(this, "O", player2);
         }
         this.board = new Board(scanner, this);
     }
 
     public void setInitialState() {
         this.board.setInitialBoard();
+    }
+
+    protected Player getCurrentPlayer() {
+        if (turnX) {
+            return this.player1;
+        } else {
+            return this.player2;
+        }
     }
 
     protected String printCharTurn() {
@@ -48,66 +61,55 @@ public class Manager {
         }
     }
 
-    protected int getCompTurn(){
+    /* Request a move to the computer player */
+    protected int getCompTurn(String board){
         if (turnX){
-            return this.player1.getCoord();
+            return this.player1.getCoord(board);
         } else {
-            return this.player2.getCoord();
+            return this.player2.getCoord(board);
         }
     }
 
-    /**
-     The logic should check from end to start, in order to use just one iteration when the board is updating
-     instead of update and loop again through the string array
-     0 1 2   1- must check 2 backwards (horizontal)
-     3 4 5   2- must check 5 backwards (horizontal)
-     6 7 8   3- must check 6 (diagonal from 6 to 2) it shouldn't check 2 to 6 because 6 might change after the check
-     4- also check 6 vertical (6-0) same logic as diagonal
-     5- must check 7 vertical (7 to 1)
-     6- last check 8 backwards (horizontal),
-     7- also check 8 vertical (8 to 2, same case at the diagonal 2-6)
-     8- and diagonal 8 to 0
-     */
-    protected static boolean checkWinner(String board, int cell) {
+    protected int checkWinner(String board, int cell) {
         /**
-         * There are 3 different checks (horizontal, vertical, diagonal)
-         * Horizontal: check i-1 and i-2
-         * Vertical: check i-3 and i-6
-         * Diagonal (6-2): check i-2 and i-4
-         * Diagonal (8-0): check i-4 and i-8
+         * This method is almost like the checkWinner at Manager class, but that method checks at the end of
+         * every row and column.
+         * This method needs to check the neighbors at every cell
+         * 0 1 2    Vertical: [0 3 6], [1 4 7], [2 5 8]
+         * 3 4 5    Horizontal: [0 1 2], [3 4 5], [6 7 8]
+         * 6 7 8    Diagonal: [1 4 8], [2 4 6]
          */
-        int[] hCells = new int[]{2, 5, 8}; // The cells that need to be checked horizontally
-        int[] vCells = new int[]{6, 7, 8}; // The cells that need to be checked vertically
-        int dLRCells = 6; // The cells that need to be checked diagonal left to right (6-2)
-        int dRLCells = 8; // The cells that need to be checked diagonal right to left (8-0)
 
-        if (board.charAt(cell) != '_'){
-            if (Arrays.stream(hCells).anyMatch(num -> num == cell)) {
-                if (board.charAt(cell) == board.charAt(cell - 1) &&
-                        board.charAt(cell) == board.charAt(cell - 2)) {
-                    return true;
+        for (int[] line : WIN_COMBINATIONS) {
+            if (line[0] == cell || line[1] == cell || line[2] == cell) {
+                int selfChar = 0;
+                int enemyChar = 0;
+                int countEmpty = 0;
+
+                for (int i : line) {
+                    /* If there's a cell where the same char at the current turn, self add 1 */
+                    if (String.valueOf(board.charAt(i)).equals(getCurrentPlayer().getTurn())) {
+                        selfChar++;
+                    }
+                    else if (board.charAt(i) == '_') {
+                        countEmpty++;
+                    } else {
+                        enemyChar++;
+                    }
                 }
-            }
-            if (Arrays.stream(vCells).anyMatch(num -> num == cell)) {
-                if (board.charAt(cell) == board.charAt(cell - 3) &&
-                        board.charAt(cell) == board.charAt(cell - 6)) {
-                    return true;
+                // If the current line has two of the same symbol and one empty, it's a threat or opportunity
+                if (countEmpty == 1) {
+                    if (enemyChar == 2){
+                        return 2;
+                    } else if (selfChar == 2){
+                        return -2;
+                    }
                 }
-            }
-            if (cell == dLRCells) {
-                if (board.charAt(cell) == board.charAt(4) &&
-                        board.charAt(cell) == board.charAt(2)) {
-                    return true;
-                }
-            }
-            if (cell == dRLCells) {
-                if (board.charAt(cell) == board.charAt(4) &&
-                        board.charAt(cell) == board.charAt(0)) {
-                    return true;
+                else if ((selfChar == 3 || enemyChar == 3) && countEmpty == 0){
+                    return 3;
                 }
             }
         }
-        return false;
+        return 0;
     }
-
 }
