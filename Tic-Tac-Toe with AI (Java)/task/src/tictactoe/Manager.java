@@ -79,6 +79,8 @@ public class Manager {
          * 3 4 5    Horizontal: [0 1 2], [3 4 5], [6 7 8]
          * 6 7 8    Diagonal: [1 4 8], [2 4 6]
          */
+        //System.out.println("cell: " + cell);
+        int bestScore = 0;
 
         for (int[] line : WIN_COMBINATIONS) {
             if (line[0] == cell || line[1] == cell || line[2] == cell) {
@@ -99,17 +101,71 @@ public class Manager {
                 }
                 // If the current line has two of the same symbol and one empty, it's a threat or opportunity
                 if (countEmpty == 1) {
-                    if (enemyChar == 2){
-                        return 2;
-                    } else if (selfChar == 2){
-                        return -2;
+                    if (enemyChar == 2 && bestScore != -2) {
+                        bestScore = 2;
+                    } else if (selfChar == 2 && bestScore != 3){
+                        bestScore = -2;
                     }
                 }
                 else if ((selfChar == 3 || enemyChar == 3) && countEmpty == 0){
-                    return 3;
+                    bestScore = 3;
                 }
             }
         }
-        return 0;
+        //System.out.println("Best score: " + bestScore);
+        return bestScore;
     }
+
+    protected int minimax(String board, boolean isMaximizing, String aiSymbol) {
+        /* If isMaximizing, current = aiSymbol. Else if ai = X then current = O and vice versa */
+        String currentSymbol;
+
+        if (isMaximizing) {
+            currentSymbol = aiSymbol;
+        } else {
+            if (aiSymbol.equals("X")) {
+                currentSymbol = "O";
+            } else {
+                currentSymbol = "X";
+            }
+        }
+
+        // Check for terminal state
+        if (checkRealWin(board, aiSymbol)) return 10;
+        if (checkRealWin(board, aiSymbol.equals("X") ? "O" : "X")) return -10;
+        if (!board.contains("_")) return 0;
+
+        int bestScore;
+        if (isMaximizing) {
+            bestScore = Integer.MIN_VALUE;
+        } else {
+            bestScore = Integer.MAX_VALUE;
+        }
+
+        for (int i = 0; i < 9; i++) {
+            if (board.charAt(i) == '_') {
+                String newBoard = board.substring(0, i) + currentSymbol + board.substring(i + 1);
+                int score = minimax(newBoard, !isMaximizing, aiSymbol);
+
+                if (isMaximizing) {
+                    bestScore = Math.max(score, bestScore);
+                } else {
+                    bestScore = Math.min(score, bestScore);
+                }
+            }
+        }
+
+        return bestScore;
+    }
+    private boolean checkRealWin(String board, String symbol) {
+        for (int[] combo : WIN_COMBINATIONS) {
+            if (board.charAt(combo[0]) == symbol.charAt(0) &&
+                    board.charAt(combo[1]) == symbol.charAt(0) &&
+                    board.charAt(combo[2]) == symbol.charAt(0)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

@@ -103,7 +103,9 @@ public class Board {
                      * */
                     newBoard += manager.printCharTurn();
                     newBoard += currentBoard.substring(i + 1);
-                    if (manager.checkWinner(newBoard, i) == 3){
+                    int result = manager.checkWinner(newBoard, i);
+                    //System.out.println(result);
+                    if (result == 3){
                         manager.endGame = true;
                         manager.printCharTurn();
                     }

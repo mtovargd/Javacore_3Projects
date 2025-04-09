@@ -23,8 +23,10 @@ public class Computer extends Player{
                 return easyMove();
             case "medium":
                 return mediumMove();
+            case "hard":
+                return hardMove();
             default:
-                return easyMove();
+                return 0;
         }
     }
 /** This method runs every time that the computer is requested with a move
@@ -52,7 +54,7 @@ public class Computer extends Player{
         int randomIndex = random.nextInt(this.emptyCells.size());
         return this.emptyCells.get(randomIndex);
     }
-    // TODO: Check the board, if it founds that the player have 2 in a row, boolean block becomes true
+
     private int mediumMove(){
         // First idea: Use the manager method to check winner and return if the sum is 2 or 3
         /* Priority to win move, if there's no win move, block move has priority */
@@ -65,5 +67,18 @@ public class Computer extends Player{
         return easyMove();
     }
 
+    private int hardMove() {
+        int bestScore = Integer.MIN_VALUE;
+        int bestMove = -1;
 
+        for (int i : emptyCells) {
+            String newBoard = currentState.substring(0, i) + this.getTurn() + currentState.substring(i + 1);
+            int score = manager.minimax(newBoard, false, this.getTurn());
+            if (score > bestScore) {
+                bestScore = score;
+                bestMove = i;
+            }
+        }
+        return bestMove;
+    }
 }
