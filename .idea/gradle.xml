@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -10,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Simple Search Engine (Java)/task" />
             <option value="$PROJECT_DIR$/Tic-Tac-Toe with AI (Java)/task" />
             <option value="$PROJECT_DIR$/Tic-Tac-Toe with AI (Java)/task/build/classes/java" />
             <option value="$PROJECT_DIR$/Tic-Tac-Toe with AI (Java)/task/build/generated/sources/annotationProcessor/java" />

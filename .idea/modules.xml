@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Project.iml" filepath="$PROJECT_DIR$/.idea/Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple Search Engine (Java)/task/Project.Simple_Search_Engine__Java_-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple Search Engine (Java)/task/Project.Simple_Search_Engine__Java_-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple Search Engine (Java)/task/Project.Simple_Search_Engine__Java_-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple Search Engine (Java)/task/Project.Simple_Search_Engine__Java_-task.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple Search Engine (Java)/task/Project.Simple_Search_Engine__Java_-task.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple Search Engine (Java)/task/Project.Simple_Search_Engine__Java_-task.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI (Java)/task/Project.Tic-Tac-Toe_with_AI__Java_-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI (Java)/task/Project.Tic-Tac-Toe_with_AI__Java_-task.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI (Java)/task/build/classes/java/Project.Tic-Tac-Toe_with_AI__Java_-task-build-classes-java.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI (Java)/task/build/classes/java/Project.Tic-Tac-Toe_with_AI__Java_-task-build-classes-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI (Java)/task/build/classes/java/Project.Tic-Tac-Toe_with_AI__Java_-task-build-classes-java.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI (Java)/task/build/classes/java/Project.Tic-Tac-Toe_with_AI__Java_-task-build-classes-java.main.iml" />

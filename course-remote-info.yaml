@@ -1,35 +1,36 @@
 hyperskill_project:
-  id: 81
-  ide_files: https://hyperskill.org/api/projects/81/additional-files/additional_files.json
+  id: 66
+  ide_files: https://hyperskill.org/api/projects/66/additional-files/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Wed, 09 Apr 2025 15:35:31 UTC"
+update_date: "Thu, 01 Jan 1970 00:00:00 UTC"
 stages:
-  - id: 447
-    step: 7434
+  - id: 354
+    step: 5496
     is_completed: true
-  - id: 448
-    step: 7435
-    is_completed: true
-  - id: 449
-    step: 7436
-    is_completed: true
-  - id: 450
-    step: 7437
-    is_completed: true
-  - id: 451
-    step: 7438
-    is_completed: true
+  - id: 355
+    step: 5497
+    is_completed: false
+  - id: 356
+    step: 5498
+    is_completed: false
+  - id: 357
+    step: 5499
+    is_completed: false
+  - id: 358
+    step: 5500
+    is_completed: false
+  - id: 359
+    step: 5501
+    is_completed: false
 topics:
   0:
-    - title: "Write, compile, and run"
-      theory_id: 3739
-    - title: Operating systems
-      theory_id: 9704
-    - title: Command line overview
-      theory_id: 8977
-    - title: Parameters and options
-      theory_id: 9746
+    - title: Computer algorithms
+      theory_id: 16547
+    - title: Comparing algorithms with big O
+      theory_id: 35900
+    - title: "Big O: how to count it"
+      theory_id: 35901
     - title: IDE
       theory_id: 10996
     - title: Introduction to Java
@@ -64,6 +65,33 @@ topics:
       theory_id: 3512
     - title: Conditional statement
       theory_id: 3503
+    - title: Characters
+      theory_id: 3514
+    - title: String
+      theory_id: 3523
+    - title: IntelliJ IDEA
+      theory_id: 37202
+    - title: IntelliJ IDEA basics
+      theory_id: 5819
+    - title: JetBrains Academy plugin
+      theory_id: 5839
+  1:
+    - title: "Write, compile, and run"
+      theory_id: 3739
+    - title: "Basic terms: JVM, JRE, JDK"
+      theory_id: 3499
+    - title: Operating systems
+      theory_id: 9704
+    - title: Command line overview
+      theory_id: 8977
+    - title: Parameters and options
+      theory_id: 9746
+    - title: Running programs on your computer
+      theory_id: 3746
+    - title: Fixed-size array
+      theory_id: 20078
+    - title: Dynamic array
+      theory_id: 5357
     - title: One-line condition with ternary operator
       theory_id: 3506
     - title: For loop
@@ -74,8 +102,12 @@ topics:
       theory_id: 3507
     - title: Declaring methods
       theory_id: 10982
+    - title: Method "main"
+      theory_id: 3489
     - title: "Multiple conditions: switch"
       theory_id: 3504
+    - title: Functional decomposition
+      theory_id: 10570
     - title: Data types and their sizes
       theory_id: 3532
     - title: Type casting
@@ -86,48 +118,47 @@ topics:
       theory_id: 5035
     - title: Array
       theory_id: 3511
-    - title: Iterating over arrays
-      theory_id: 3602
-    - title: Characters
-      theory_id: 3514
-    - title: String
-      theory_id: 3523
+    - title: Arrays as parameters
+      theory_id: 3594
     - title: Errors in programs
       theory_id: 3536
+    - title: First glance at exceptions
+      theory_id: 3497
+    - title: What is object-oriented programming
+      theory_id: 3614
     - title: What are bugs
       theory_id: 5504
-    - title: Multidimensional array
-      theory_id: 1933
+    - title: Command-line arguments
+      theory_id: 3566
     - title: Debugging overview
       theory_id: 14368
-    - title: IntelliJ IDEA
-      theory_id: 37202
     - title: Run and debug with IntelliJ IDEA
       theory_id: 37206
     - title: Debugging simple constructs
       theory_id: 16479
     - title: IntelliJ IDEA run configurations
       theory_id: 10630
-  1:
-    - title: Method "main"
-      theory_id: 3489
-    - title: Functional decomposition
-      theory_id: 10570
-    - title: What is object-oriented programming
-      theory_id: 3614
-    - title: IntelliJ IDEA basics
-      theory_id: 5819
-    - title: JetBrains Academy plugin
-      theory_id: 5839
-    - title: Random class
-      theory_id: 4910
+    - title: Searching problem
+      theory_id: 15894
+    - title: Linear search
+      theory_id: 4970
     - title: Defining classes
       theory_id: 3618
-    - title: Objects and their properties
-      theory_id: 4727
   2:
-    - title: Arrays as parameters
-      theory_id: 3594
+    - title: Overloading
+      theory_id: 3525
+    - title: Hierarchy of exceptions
+      theory_id: 3570
+    - title: Exception handling
+      theory_id: 3552
+    - title: File class
+      theory_id: 3635
+    - title: Reading files
+      theory_id: 3636
+    - title: Introduction to logging
+      theory_id: 5538
+    - title: Debugging techniques
+      theory_id: 13775
     - title: Instance methods
       theory_id: 3495
     - title: Grouping classes with packages
@@ -138,63 +169,80 @@ topics:
       theory_id: 3589
     - title: Getters and setters
       theory_id: 3599
-  3:
-    - title: Overloading
-      theory_id: 3525
-    - title: Constants. Final variables
-      theory_id: 7427
-    - title: Debugging methods
-      theory_id: 52095
     - title: Inheritance
       theory_id: 3583
     - title: Multiple constructors
       theory_id: 3538
     - title: Keyword "super"
       theory_id: 3588
+    - title: Objects and their properties
+      theory_id: 4727
+  3:
+    - title: Immutability
+      theory_id: 7929
+    - title: Constants. Final variables
+      theory_id: 7427
+    - title: NullPointerException
+      theory_id: 1945
+    - title: Debugging methods
+      theory_id: 52095
+    - title: Introduction to generic programming
+      theory_id: 3492
+    - title: Protected modifier
+      theory_id: 6692
+    - title: Referencing subclass objects
+      theory_id: 3585
     - title: Adding annotations
       theory_id: 3622
     - title: Static members
       theory_id: 3534
     - title: Method overriding
       theory_id: 3572
-    - title: Covariant return types
-      theory_id: 3539
+    - title: Polymorphism
+      theory_id: 3587
+    - title: Wrapping classes. Boxing
+      theory_id: 3595
   4:
-    - title: Computer algorithms
-      theory_id: 16547
+    - title: Modulo division
+      theory_id: 10586
     - title: Data structures
       theory_id: 40371
     - title: Abstract and concrete data structures
       theory_id: 16927
-    - title: Stack
-      theory_id: 5252
-    - title: First glance at exceptions
-      theory_id: 3497
-    - title: Hierarchy of exceptions
-      theory_id: 3570
-    - title: Introduction to logging
-      theory_id: 5538
-    - title: Debugging techniques
-      theory_id: 13775
-    - title: Recursion basics
-      theory_id: 5984
-    - title: Computer Memory
-      theory_id: 18003
-    - title: Components of computer memory
-      theory_id: 18049
-    - title: Stack and heap memory
-      theory_id: 21577
-    - title: Call stack
-      theory_id: 5135
-    - title: Recursion
-      theory_id: 3550
-    - title: Protected modifier
-      theory_id: 6692
-    - title: Referencing subclass objects
-      theory_id: 3585
-    - title: Polymorphism
-      theory_id: 3587
+    - title: Iterating over arrays
+      theory_id: 3602
+    - title: "Hashing: overview"
+      theory_id: 9831
+    - title: Hash function
+      theory_id: 30143
+    - title: Hash table
+      theory_id: 13054
+    - title: Generics and Object
+      theory_id: 3493
+    - title: What are collections
+      theory_id: 3770
+    - title: The Collections framework overview
+      theory_id: 3624
+    - title: ArrayList
+      theory_id: 3567
+    - title: The List interface
+      theory_id: 3581
+    - title: The Set interface
+      theory_id: 3575
+    - title: The Map interface
+      theory_id: 3558
+    - title: HashMap
+      theory_id: 12379
+    - title: Object class
+      theory_id: 3596
     - title: Declaring functionality with interfaces
       theory_id: 3615
+  5:
+    - title: Concept of design patterns
+      theory_id: 3611
+    - title: Strategy
+      theory_id: 3556
+    - title: Template method
+      theory_id: 5155
     - title: Abstract class
       theory_id: 3597
