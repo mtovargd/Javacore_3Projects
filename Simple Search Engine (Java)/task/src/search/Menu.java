@@ -7,16 +7,14 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         DataHandler dataHandler = new DataHandler();
         boolean running = true;
+        String fileName = "";
+
+        public void setFileName(String fileName) {
+            this.fileName = fileName;
+            dataHandler.readInput(fileName);
+        }
 
     public void displayMenu() {
-        System.out.println("Enter the number of people:");
-        int n = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.println("Enter all the people:");
-        for (int i = 0; i < n; i++) {
-            dataHandler.saveInputs(scanner.nextLine());
-        }
 
         while (running) {
             switch (checkNumInput()) {
