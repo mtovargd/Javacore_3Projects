@@ -38,6 +38,7 @@ public class Menu {
     private int checkNumInput() {
         boolean valid = false;
         String input = "";
+        int numberInput = -1;
         while (!valid) {
             System.out.println("=== Menu ===\n" +
                     "1. Find a person\n" +
@@ -45,13 +46,17 @@ public class Menu {
                     "0. Exit");
             try{
                 input = scanner.next();
-                Integer.parseInt(input);
+                numberInput = Integer.parseInt(input);
             } catch (NumberFormatException e) {
                 System.out.println("Incorrect option! Try again.");
                 continue;
             }
-            valid = true;
+            if (numberInput >= 0 && numberInput <= 2) {
+                valid = true;
+            } else {
+                System.out.println("Incorrect option! Try again.");
+            }
         }
-        return Integer.parseInt(input);
+        return numberInput;
     }
 }
