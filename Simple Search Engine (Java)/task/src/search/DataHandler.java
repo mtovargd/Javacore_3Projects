@@ -15,4 +15,9 @@ public class DataHandler {
             }
         }
     }
+    public void findPeople() {
+        for (String i : people){
+            System.out.println(people.get(people.indexOf(i)));
+        }
+    }
 }
