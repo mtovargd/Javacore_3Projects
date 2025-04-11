@@ -1,0 +1,10 @@
+[1;31m
+Start test 1[0m
+Enter the name of the person:
+> John
+!Enter the surname of the person:
+> Smith
+Enter the number:
+> 1-234-567-890
+A record created!
++A Phone Book with a single record created!
