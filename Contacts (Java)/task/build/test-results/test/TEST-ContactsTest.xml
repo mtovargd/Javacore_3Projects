@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ContactsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-04-11T21:49:05" hostname="nocs-MacBook-Pro.local" time="0.073">
+  <properties/>
+  <testcase name="start" classname="ContactsTest" time="0.073"/>
+  <system-out><![CDATA[?[1;31m
+Start test 1?[0m
+Enter the name of the person:
+> John
+Enter the surname of the person:
+> Smith
+Enter the number:
+> 1-234-567-890
+A record created!
+A Phone Book with a single record created!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
