@@ -35,16 +35,47 @@ public class DataHandler {
     }
 
     // Search by keyword using inverted index
-    public void findPeople(String searchString) {
-        String key = searchString.toLowerCase();
-        Set<Integer> matchedIndexes = invertedIndex.get(key);
+    public void findPeople(String query, String strategy) {
+        String[] words = query.toLowerCase().split("\\s+");
 
-        if (matchedIndexes != null && !matchedIndexes.isEmpty()) {
-            for (int index : matchedIndexes) {
+        Set<Integer> resultIndexes = new HashSet<>();
+
+        switch (strategy.toUpperCase()) {
+            case "ALL":
+                resultIndexes = new HashSet<>(getIndexes(words[0]));
+                for (int i = 1; i < words.length; i++) {
+                    resultIndexes.retainAll(getIndexes(words[i]));
+                }
+                break;
+
+            case "ANY":
+                for (String word : words) {
+                    resultIndexes.addAll(getIndexes(word));
+                }
+                break;
+
+            case "NONE":
+                Set<Integer> allIndexes = new HashSet<>();
+                for (int i = 0; i < people.size(); i++) {
+                    allIndexes.add(i);
+                }
+                for (String word : words) {
+                    allIndexes.removeAll(getIndexes(word));
+                }
+                resultIndexes = allIndexes;
+                break;
+
+            default:
+                System.out.println("Unknown strategy: " + strategy);
+                return;
+        }
+
+        if (resultIndexes.isEmpty()) {
+            System.out.println("No matching people found.");
+        } else {
+            for (int index : resultIndexes) {
                 System.out.println(people.get(index));
             }
-        } else {
-            System.out.println("No matching people found.");
         }
     }
 
@@ -53,5 +84,9 @@ public class DataHandler {
         for (String person : people) {
             System.out.println(person);
         }
+    }
+
+    private Set<Integer> getIndexes(String word) {
+        return invertedIndex.getOrDefault(word.toLowerCase(), new HashSet<>());
     }
 }

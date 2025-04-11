@@ -1,5 +1,8 @@
 package search;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -19,9 +22,12 @@ public class Menu {
         while (running) {
             switch (checkNumInput()) {
                 case 1:
-                    System.out.println("Enter a name or email to search all suitable people.");
                     scanner.nextLine();
-                    dataHandler.findPeople(scanner.nextLine());
+                    String strategy = checkStrategyInput();
+                    scanner.nextLine();
+                    System.out.println("Enter a name or email to search all suitable people.");
+                    String query = scanner.nextLine();
+                    dataHandler.findPeople(query, strategy);
                     break;
                 case 2:
                     System.out.println("=== List of people ===");
@@ -58,5 +64,23 @@ public class Menu {
             }
         }
         return numberInput;
+    }
+
+    private String checkStrategyInput() {
+
+        boolean valid = false;
+        String input = "";
+        List<String> options = Arrays.asList("ALL", "ANY", "NONE");
+        while (!valid) {
+            System.out.println("Select a matching strategy: ALL, ANY, NONE");
+            input = scanner.next();
+
+            if (options.contains(input.toUpperCase())) {
+                valid = true;
+            } else {
+                System.out.println("Incorrect option! Try again.");
+            }
+        }
+        return input;
     }
 }
