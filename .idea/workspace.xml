@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf8a8633-65d5-4c57-9a1d-1056b7a4ac27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Contacts (Java)/task/Project.Contacts__Java_-task.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Contacts (Java)/task/Project.Contacts__Java_-task.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Contacts (Java)/task/Project.Contacts__Java_-task.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" afterDir="false" />
@@ -28,7 +25,30 @@
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/course-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/Create a menu/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/Create a menu/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/First contact/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/First contact/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/lesson-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/ContactsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/ContactsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/TestClue.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/TestClue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/classes/ContactsTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/classes/ContactsTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/TEST-ContactsTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/TEST-ContactsTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/test/ContactsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/test/ContactsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +75,7 @@
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Book.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/test/ContactsTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -66,24 +87,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Edu.LearningObjectsStorageType": "SQLite",
-    "Edu.Yaml.Migrate": "true",
-    "Gradle.Tests in 'Project.Contacts__Java_-task.test'.executor": "Run",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "currentContactsTask",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Edu.LearningObjectsStorageType&quot;: &quot;SQLite&quot;,
+    &quot;Edu.Yaml.Migrate&quot;: &quot;true&quot;,
+    &quot;Gradle.Tests in 'Project.Contacts__Java_-task.test'.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;currentContactsTask&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -93,6 +114,11 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SqlInitializationState">
+    <taskDatabasesInitialized>
+      <option value="jdbc:h2:file:/Users/mtovar/Documents/Courses/Javacore/Project/Contacts (Java)/Create a menu/db/db" />
+    </taskDatabasesInitialized>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bf8a8633-65d5-4c57-9a1d-1056b7a4ac27" name="Changes" comment="" />
@@ -102,7 +128,11 @@
       <updated>1744406161753</updated>
       <workItem from="1744406163362" duration="1044000" />
       <workItem from="1744407219988" duration="183000" />
-      <workItem from="1744407412850" duration="739000" />
+      <workItem from="1744407412850" duration="881000" />
+      <workItem from="1744643400087" duration="12394000" />
+      <workItem from="1744667018678" duration="264000" />
+      <workItem from="1744669054353" duration="618000" />
+      <workItem from="1744672172296" duration="5091000" />
     </task>
     <servers />
   </component>
