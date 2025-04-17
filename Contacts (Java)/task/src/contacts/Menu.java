@@ -11,12 +11,19 @@ public class Menu {
 
     public void displayMenu() {
         while (running) {
-            System.out.print("Enter action (add, remove, edit, count, list, exit): ");
+            System.out.print("Enter action (add, remove, edit, count, info, exit): ");
             String action = scanner.nextLine();
             switch (action) {
                 case "add":
-                    Contact contact = new Contact();
-                    this.book.addContact(contact);
+                    System.out.print("Enter the type (person, organization): ");
+                    String type = scanner.nextLine();
+                    if (type.equals("person")) {
+                        Contact person = new Person();
+                        this.book.addContact(person);
+                    } else if (type.equals("organization")) {
+                        Contact organization = new Organization();
+                        this.book.addContact(organization);
+                    }
                     break;
                 case "remove":
                     if (this.book.validateInput()){
@@ -39,10 +46,19 @@ public class Menu {
                 case "count":
                     this.book.countContacts();
                     break;
-                case "list":
-                    this.book.listContacts();
+                case "info":
+                    if (this.book.validateInput()){
+                        this.book.listContacts();
+                        System.out.println("Enter index to show info: ");
+                        int id = scanner.nextInt();
+                        scanner.nextLine();
+                        this.book.showInfo(id);
+                    } else {
+                        System.out.println("No records to show!");
+                    }
                     break;
                 case "exit":
+                    System.out.println("\n");
                     running = false;
                     break;
                 default:
@@ -57,10 +73,10 @@ public class Menu {
         int id = -1;
         while (!valid) {
             System.out.print("Select a record: ");
-            String contactRemove = scanner.next();
+            String contactInput = scanner.next();
             scanner.nextLine();
             try {
-                id = Integer.parseInt(contactRemove);
+                id = Integer.parseInt(contactInput);
             } catch (NumberFormatException e) {
                 System.out.println("Enter a number!");
                 continue;

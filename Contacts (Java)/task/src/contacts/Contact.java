@@ -1,30 +1,22 @@
 package contacts;
 
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Contact {
 
     Scanner scanner = new Scanner(System.in);
     String name;
-    String surname;
     String phone;
+    String creationDate;
+    String lastEditDate;
+    protected final boolean person;
 
-    public Contact() {
-        this.setName();
-        this.setSurname();
-        this.setPhone();
+    public Contact(boolean person) {
+        this.person = person;
     }
 
-    protected void setName() {
-        System.out.print("Enter the name: ");
-        this.name = scanner.next();
-        scanner.nextLine();
-    }
-    protected void setSurname() {
-        System.out.print("Enter the surname: ");
-        this.surname = scanner.next();
-        scanner.nextLine();
-    }
+
     protected void setPhone() {
         System.out.print("Enter the number: ");
         String phoneInput = scanner.nextLine();
@@ -37,14 +29,27 @@ public class Contact {
         }
     }
 
+    protected void setEditDate() {
+        this.lastEditDate = LocalDateTime.now().toString();
+    }
+
     public String getName() {
         return name;
     }
-    public String getSurname() {
-        return surname;
-    }
+
     public String getPhone() {
         return phone;
+    }
+
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public String getLastEditDate() {
+        if (lastEditDate == null) {
+            return this.creationDate;
+        }
+        return this.lastEditDate;
     }
 
     private boolean isValidPhone(String number) {
@@ -71,5 +76,20 @@ public class Contact {
         if (parenthesesCount != 0 && parenthesesCount != 2) return false;
 
         return number.matches(regex);
+    }
+
+    public boolean isPerson(){
+        return this.person;
+    }
+
+    protected String checkEmpty(String input) {
+        if (!input.isEmpty()) {
+            return input;
+        }
+        return "[no data]";
+    }
+
+    protected void getInfo() {
+        return;
     }
 }

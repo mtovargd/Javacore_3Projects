@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf8a8633-65d5-4c57-9a1d-1056b7a4ac27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Organization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" afterDir="false" />
@@ -14,23 +15,25 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.author_contents_storage_db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.author_contents_storage_db-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.author_contents_storage_db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.author_contents_storage_db-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/Create a menu/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/Create a menu/task-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contacts (Java)/First contact/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/First contact/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/Upgrade your contacts/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/Upgrade your contacts/task-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/lesson-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Contact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/ContactsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/ContactsTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/TestClue.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/TestClue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/classes/ContactsTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/classes/ContactsTest.html" afterDir="false" />
@@ -42,12 +45,9 @@
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Contact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/out/production/classes/contacts/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/test/ContactsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/test/ContactsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
@@ -76,6 +76,8 @@
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Organization.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Person.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/test/ContactsTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -117,6 +119,7 @@
   <component name="SqlInitializationState">
     <taskDatabasesInitialized>
       <option value="jdbc:h2:file:/Users/mtovar/Documents/Courses/Javacore/Project/Contacts (Java)/Create a menu/db/db" />
+      <option value="jdbc:h2:file:/Users/mtovar/Documents/Courses/Javacore/Project/Contacts (Java)/Upgrade your contacts/db/db" />
     </taskDatabasesInitialized>
   </component>
   <component name="TaskManager">
@@ -132,7 +135,11 @@
       <workItem from="1744643400087" duration="12394000" />
       <workItem from="1744667018678" duration="264000" />
       <workItem from="1744669054353" duration="618000" />
-      <workItem from="1744672172296" duration="5091000" />
+      <workItem from="1744672172296" duration="5432000" />
+      <workItem from="1744730153746" duration="784000" />
+      <workItem from="1744736851905" duration="2821000" />
+      <workItem from="1744816040897" duration="15215000" />
+      <workItem from="1744902732028" duration="8747000" />
     </task>
     <servers />
   </component>
