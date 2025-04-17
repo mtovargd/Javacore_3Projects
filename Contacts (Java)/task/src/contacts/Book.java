@@ -8,48 +8,86 @@ public class Book {
 
     public void addContact(Contact contact) {
         this.contacts.add(contact);
-        System.out.println("The record added");
+        System.out.println("The record added.\n");
     }
 
     public void removeContact(int index) {
         int id = this.validateInput(index);
         if (id > 0){
             this.contacts.remove(index - 1);
-            System.out.println("The record removed!");
+            System.out.println("The record removed!\n");
         }
     }
 
     public void countContacts() {
-        System.out.println("The Phone Book has " + contacts.size() + " records.");
+        System.out.println("The Phone Book has " + contacts.size() + " records.\n");
     }
 
     public void listContacts() {
         for (Contact contact : contacts) {
-            System.out.println((contacts.indexOf(contact) + 1) + ". " + contact.getName() +
-                    " " + contact.getSurname() + ", " + contact.getPhone());
+            if (contact.isPerson()) {
+                Person person = (Person) contact;
+                System.out.println((contacts.indexOf(contact) + 1) + ". " + person.getName() +
+                        " " + person.getSurname());
+            } else {
+                System.out.println((contacts.indexOf(contact) + 1) + ". " + contact.getName());
+            }
+        }
+    }
+
+    public void showInfo(int index) {
+        int id = this.validateInput(index);
+        if (id > 0){
+            this.contacts.get(id-1).getInfo();
         }
     }
 
     public void editContact(int index, Scanner scanner) {
         int id = this.validateInput(index);
         if (id > 0){
-            System.out.print("Select a field (name, surname, number): ");
-            String field = scanner.nextLine();
-            switch (field){
-                case "name":
-                    this.contacts.get(id-1).setName();
-                    break;
-                case "surname":
-                    this.contacts.get(id-1).setSurname();
-                    break;
-                case "number":
-                    this.contacts.get(id-1).setPhone();
-                    break;
-                default:
-                    System.out.println("Invalid field");
-                    break;
+            Contact contact = this.contacts.get(id-1);
+            if (contact.isPerson()){
+                Person person = (Person) contact;
+                System.out.print("Select a field (name, surname, birth, gender, number): ");
+                String field = scanner.nextLine();
+                switch (field){
+                    case "name":
+                        person.setName();
+                        break;
+                    case "surname":
+                        person.setSurname();
+                        break;
+                    case "birth":
+                        person.setBirthday();
+                        break;
+                    case "gender":
+                        person.setGender();
+                        break;
+                    case "number":
+                        person.setPhone();
+                        break;
+                    default:
+                        System.out.println("Invalid field");
+                        break;
+                }
+            } else {
+                Organization org = (Organization) contact;
+                System.out.print("Select a field (name, surname, birth, gender, number): ");
+                String field = scanner.nextLine();
+                switch (field){
+                    case "address":
+                        org.setAddress();
+                        break;
+                    case "number":
+                        org.setPhone();
+                        break;
+                    default:
+                        System.out.println("Invalid field");
+                        break;
+                }
             }
-            System.out.println("The record updated!");
+            contact.setEditDate();
+            System.out.println("The record updated!\n");
         }
     }
 
