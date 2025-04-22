@@ -6,6 +6,52 @@ files:
   - name: test/ContactsTest.java
     visible: false
     learner_created: false
+  - name: src/contacts/Contact.java
+    visible: true
+    learner_created: true
+  - name: src/contacts/Book.java
+    visible: true
+    learner_created: true
+  - name: src/contacts/Organization.java
+    visible: true
+    learner_created: true
+  - name: src/contacts/Person.java
+    visible: true
+    learner_created: true
+  - name: src/contacts/Menu.java
+    visible: true
+    learner_created: true
+  - name: src/contacts/Book.class
+    visible: true
+    is_binary: true
+    learner_created: true
+  - name: src/contacts/Main.class
+    visible: true
+    is_binary: true
+    learner_created: true
+  - name: src/contacts/Organization.class
+    visible: true
+    is_binary: true
+    learner_created: true
+  - name: src/contacts/Person.class
+    visible: true
+    is_binary: true
+    learner_created: true
+  - name: src/contacts/Menu.class
+    visible: true
+    is_binary: true
+    learner_created: true
+  - name: src/contacts/Contact.class
+    visible: true
+    is_binary: true
+    learner_created: true
+  - name: src/phonebook.db
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/5327#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Tue, 22 Apr 2025 16:51:47 UTC"
 record: -1

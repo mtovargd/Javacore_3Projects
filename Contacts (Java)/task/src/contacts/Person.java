@@ -1,21 +1,19 @@
 package contacts;
 
-import java.time.LocalDateTime;
-
-public class Person extends Contact{
-
+import java.io.Serializable;
+public class Person extends Contact implements Serializable {
+    private static final long serialVersionUID = 1L;
     String surname;
     String birthday;
     String gender;
 
-    public Person(){
-        super(true);
+    public Person() {
+        super();
         this.setName();
         this.setSurname();
         this.setBirthday();
         this.setGender();
         this.setPhone();
-        this.creationDate = LocalDateTime.now().toString();
     }
 
     protected void setName() {
@@ -41,19 +39,57 @@ public class Person extends Contact{
         if (inputGender.equalsIgnoreCase("M") || inputGender.equals("F")) {
             this.gender = inputGender;
         } else {
-            System.out.println("Bad gender!");
             this.gender = "[no data]";
         }
     }
 
-    public String getSurname() { return surname; }
-    public String getGender() { return gender; }
-    public  String getBirthday() { return birthday; }
+    public String[] getEditableFields() {
+        return new String[]{"name", "surname", "birth", "gender", "number"};
+    }
+
+    public void setField(String field, String value) {
+        switch (field) {
+            case "name": this.name = checkEmpty(value); break;
+            case "surname": this.surname = checkEmpty(value); break;
+            case "birth": this.birthday = checkEmpty(value); break;
+            case "gender":
+                if (value.equalsIgnoreCase("M") || value.equalsIgnoreCase("F")) {
+                    this.gender = value;
+                } else {
+                    this.gender = "[no data]";
+                }
+                break;
+            case "number":
+                this.setPhone(value);
+                break;
+        }
+        setEditDate();
+    }
+
+    public String getField(String field) {
+        switch (field) {
+            case "name": return this.name;
+            case "surname": return this.surname;
+            case "birth": return this.birthday;
+            case "gender": return this.gender;
+            case "number": return this.phone;
+            default: return "";
+        }
+    }
 
     public void getInfo() {
-        System.out.println("Name: " + this.getName() + "\nSurname: " + this.getSurname() +
-                "\nBirth date: " + this.getBirthday() + "\nGender: " + this.getGender() +
-                "\nNumber: " + this.getPhone() + "\nTime created: " + this.getCreationDate() +
-                "\nTime last edit: " + this.getLastEditDate() + "\n");
+        System.out.println("Name: " + this.name +
+                "\nSurname: " + this.surname +
+                "\nBirth date: " + this.birthday +
+                "\nGender: " + this.gender +
+                "\nNumber: " + this.phone +
+                "\nTime created: " + this.creationDate +
+                "\nTime last edit: " + this.getLastEditDate());
     }
+
+    @Override
+    public String getPreview() {
+        return this.name + " " + this.surname;
+    }
+
 }
