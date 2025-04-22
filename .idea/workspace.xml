@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf8a8633-65d5-4c57-9a1d-1056b7a4ac27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Organization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" afterDir="false" />
@@ -28,14 +26,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contacts (Java)/Create a menu/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/Create a menu/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/Searching/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/Searching/task-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/Upgrade your contacts/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/Upgrade your contacts/task-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/lesson-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Organization.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Organization.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/main/contacts/Person.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/ContactsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/ContactsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/TestClue.class" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/classes/java/test/TestClue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/classes/ContactsTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/classes/ContactsTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/reports/tests/test/packages/default-package.html" afterDir="false" />
@@ -47,7 +47,10 @@
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Organization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contacts (Java)/task/test/ContactsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts (Java)/task/test/ContactsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
@@ -72,12 +75,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Book.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Book.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Contact.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Menu.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Organization.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Organization.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Person.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/contacts/Person.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/src/phonebook.db" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Contacts (Java)/task/test/ContactsTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -119,6 +129,7 @@
   <component name="SqlInitializationState">
     <taskDatabasesInitialized>
       <option value="jdbc:h2:file:/Users/mtovar/Documents/Courses/Javacore/Project/Contacts (Java)/Create a menu/db/db" />
+      <option value="jdbc:h2:file:/Users/mtovar/Documents/Courses/Javacore/Project/Contacts (Java)/Searching/db/db" />
       <option value="jdbc:h2:file:/Users/mtovar/Documents/Courses/Javacore/Project/Contacts (Java)/Upgrade your contacts/db/db" />
     </taskDatabasesInitialized>
   </component>
@@ -139,7 +150,13 @@
       <workItem from="1744730153746" duration="784000" />
       <workItem from="1744736851905" duration="2821000" />
       <workItem from="1744816040897" duration="15215000" />
-      <workItem from="1744902732028" duration="8747000" />
+      <workItem from="1744902732028" duration="18426000" />
+      <workItem from="1744991854765" duration="137000" />
+      <workItem from="1745010566704" duration="5457000" />
+      <workItem from="1745253805630" duration="45000" />
+      <workItem from="1745254139863" duration="1136000" />
+      <workItem from="1745255576406" duration="8802000" />
+      <workItem from="1745335099819" duration="5063000" />
     </task>
     <servers />
   </component>

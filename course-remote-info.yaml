@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://hyperskill.org/api/projects/43/additional-files/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Thu, 17 Apr 2025 15:12:18 UTC"
+update_date: "Tue, 22 Apr 2025 15:18:28 UTC"
 stages:
   - id: 228
     step: 5324
@@ -16,7 +16,7 @@ stages:
     is_completed: true
   - id: 231
     step: 5327
-    is_completed: false
+    is_completed: true
 topics:
   0:
     - title: Data structures
@@ -33,7 +33,7 @@ topics:
       theory_id: 8977
     - title: Parameters and options
       theory_id: 9746
-    - title: Running programs on your computer
+    - title: Compile and run Java from CLI
       theory_id: 3746
     - title: IDE
       theory_id: 10996
@@ -67,7 +67,7 @@ topics:
       theory_id: 3565
     - title: Increment and decrement
       theory_id: 5008
-    - title: Floating-point types
+    - title: Floating-point types and operations
       theory_id: 3517
     - title: Boolean type and operations. True and false
       theory_id: 3516
